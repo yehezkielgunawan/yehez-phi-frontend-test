@@ -74,6 +74,18 @@ function App(props) {
           </table>
           <Form addTask={addTask} />
         </div>
+        <div class="footer-copyright text-center py-3">
+          <p>
+            © 2020 Made by{" "}
+            <a href="yehezkielgunawan123.surge.sh">Yehezkiel Gunawan</a>{" "}
+          </p>
+          <p>
+            Using resource and knowledge from{" "}
+            <a href="https://www.taniarascia.com/getting-started-with-react/">
+              Tania Rascia
+            </a>{" "}
+          </p>
+        </div>
       </div>
     );
   }
@@ -105,6 +117,18 @@ function App(props) {
           </tbody>
         </table>
         <Form addTask={addTask} />
+      </div>
+      <div class="footer-copyright text-center py-3">
+        <p>
+          © 2020 Made by{" "}
+          <a href="yehezkielgunawan123.surge.sh">Yehezkiel Gunawan</a>{" "}
+        </p>
+        <p>
+          Using resource and knowledge from{" "}
+          <a href="https://www.taniarascia.com/getting-started-with-react/">
+            Tania Rascia
+          </a>{" "}
+        </p>
       </div>
     </div>
   );

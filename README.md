@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br/>
+This project was made with React JS and Bootstrap (for styling). <br/>
+The deployed version can be seen at this [link](https://yehez-phi-frontend-test.vercel.app/).
 
 ## Available Scripts
 
