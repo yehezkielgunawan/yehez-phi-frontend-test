@@ -1,24 +1,111 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import TableContent from "./TableContent.js";
+import Form from "./Form.js";
+import { nanoid } from "nanoid";
 
-function App() {
+function App(props) {
+  const [tasks, setTasks] = useState(props.tasks);
+  let i = 0;
+  const taskList = tasks.map((task) => (
+    <TableContent
+      id={task.id}
+      number={++i}
+      name={task.name}
+      address={task.address}
+      phone={task.phone}
+      key={task.id}
+      deleteTask={deleteTask}
+      editTask={editTask}
+    />
+  ));
+  const tasksNoun = taskList.length > 1 ? "datas" : "data";
+  const headingText = `${taskList.length} ${tasksNoun} remaining`;
+
+  function addTask(data_user) {
+    const newTask = {
+      id: "list - " + nanoid(),
+      name: data_user.name,
+      address: data_user.address,
+      phone: data_user.phone,
+    };
+    setTasks([...tasks, newTask]);
+  }
+
+  function deleteTask(id) {
+    const remainingTasks = tasks.filter((task) => id !== task.id);
+    setTasks(remainingTasks);
+  }
+
+  function editTask(id, newData) {
+    const editedTaskList = tasks.map((task) => {
+      if (id === task.id) {
+        return {
+          ...task,
+          name: newData.newName,
+          address: newData.newAddress,
+          phone: newData.newPhone,
+        };
+      }
+      return task;
+    });
+    setTasks(editedTaskList);
+  }
+
+  if (taskList.length > 0) {
+    return (
+      <div className="App">
+        <div className="container">
+          <div className="jumbotron">
+            <h1 className="display-4 text-center">Simple Local CRUD React</h1>
+          </div>
+          <h5>{headingText}</h5>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>#No</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            {taskList}
+          </table>
+          <Form addTask={addTask} />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="jumbotron">
+          <h1 className="display-4 text-center">Simple Local CRUD React</h1>
+        </div>
+        <h5>{headingText}</h5>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>#No</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody className="text-center">
+            <td></td>
+            <td></td>
+            <td>
+              <h3>NO DATA</h3>
+            </td>
+            <td></td>
+            <td></td>
+          </tbody>
+        </table>
+        <Form addTask={addTask} />
+      </div>
     </div>
   );
 }
