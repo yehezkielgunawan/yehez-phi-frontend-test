@@ -60,18 +60,20 @@ function App(props) {
             <h1 className="display-4 text-center">Simple Local CRUD React</h1>
           </div>
           <h5>{headingText}</h5>
-          <table className="table">
-            <thead>
-              <tr>
-                <th>#No</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            {taskList}
-          </table>
+          <div className="table-responsive">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>#No</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Phone</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              {taskList}
+            </table>
+          </div>
           <Form addTask={addTask} />
         </div>
         <div class="footer-copyright text-center py-3">
@@ -96,26 +98,28 @@ function App(props) {
           <h1 className="display-4 text-center">Simple Local CRUD React</h1>
         </div>
         <h5>{headingText}</h5>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>#No</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Phone</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody className="text-center">
-            <td></td>
-            <td></td>
-            <td>
-              <h3>NO DATA</h3>
-            </td>
-            <td></td>
-            <td></td>
-          </tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>#No</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody className="text-center">
+              <td></td>
+              <td></td>
+              <td>
+                <h3>NO DATA</h3>
+              </td>
+              <td></td>
+              <td></td>
+            </tbody>
+          </table>
+        </div>
         <Form addTask={addTask} />
       </div>
       <div class="footer-copyright text-center py-3">

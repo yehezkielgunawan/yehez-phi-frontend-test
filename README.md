@@ -3,7 +3,7 @@ This project was made with React JS and Bootstrap (for styling). <br/>
 The deployed version can be seen at this [link](https://yehez-simple-crud-react.vercel.app/).
 
 ## Available Scripts
-
+If you want to run locally, after clone this repository, don't forget to run `npm install`. <br/>
 In the project directory, you can run:
 
 ### `npm start`
