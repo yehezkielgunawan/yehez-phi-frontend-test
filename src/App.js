@@ -61,14 +61,14 @@ function App(props) {
           </div>
           <h5>{headingText}</h5>
           <div className="table-responsive">
-            <table className="table">
-              <thead>
+            <table className="table table-striped table-hover table-dark">
+              <thead className="thead-dark">
                 <tr>
-                  <th>#No</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Phone</th>
-                  <th>Action</th>
+                  <th scope="col">#No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               {taskList}
@@ -99,8 +99,8 @@ function App(props) {
         </div>
         <h5>{headingText}</h5>
         <div className="table-responsive">
-          <table className="table">
-            <thead>
+          <table className="table table-striped">
+            <thead  className="thead-dark">
               <tr>
                 <th>#No</th>
                 <th>Name</th>

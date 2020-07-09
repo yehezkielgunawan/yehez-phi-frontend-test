@@ -36,9 +36,7 @@ export default function TableContent(props) {
   const editingTemplate = (
     <tbody>
       <tr>
-        <td>
-          {props.number}
-        </td>
+        <th scope="row">{props.number}</th>
         <td>
           <form onSubmit={handleSubmit}>
             <input
